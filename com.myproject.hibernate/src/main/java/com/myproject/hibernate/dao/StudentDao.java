@@ -1,7 +1,9 @@
 package com.myproject.hibernate.dao;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,8 +31,13 @@ public class StudentDao implements StudentService {
 	@Transactional(readOnly = true)
 	public Student getStudent(Long id) {
 		Session session = factory.getCurrentSession();
-		return session.get(Student.class, id);
+		Student s= session.get(Student.class, id);
+		
+		
+		return s;
 	}
+	
+
 
 	// Update an existing student
 	@Override

@@ -16,6 +16,13 @@ public class Student {
 	long id;
 	String name;
 	String address;
+	
+	
+
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public long getId() {
 		return id;
